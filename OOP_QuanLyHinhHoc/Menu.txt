@@ -1,0 +1,19 @@
+hoose = "x"
+        while choose != 0:
+            choose = ChonMenu(len(kieuHinh)-1, 1)
+            system('cls')
+            if kieuHinh[choose] == "Thoat":
+                break
+            elif kieuHinh[choose] == "Hinh Vuong":
+                print("Truong hop hinh vuong")
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+            elif kieuHinh[choose] == "Hinh Tron":
+                print("Truong hop hinh tron")
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+            elif kieuHinh[choose] == "Hinh Chu Nhat":
+                print("Truong hop hinh chu nhat")
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+            input("Nhan phim Enter de tiep tuc!")
