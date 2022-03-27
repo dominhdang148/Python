@@ -4,10 +4,10 @@ from HinhTron import HinhTron
 from HinhChuNhat import HinhChuNhat
 
 
-class DanhSachHinhHoc():
+class DanhSachHinhHoc:
     def __init__(self):
         self.danhSach = []
-# region Input/Output``
+# region Input/Output
 
     def ThemHinh(self, hinhHoc):
         self.danhSach.append(hinhHoc)
@@ -34,112 +34,53 @@ class DanhSachHinhHoc():
         return s
 # endregion
 
-# region Hình Vuông
-    def TimHinhVuongCoChuVi(self, x):
+# region Generic
+    def TimHinhCoChuVi(self, x, hinh=HinhHoc):
         result = DanhSachHinhHoc()
-        for hinh in self.danhSach:
-            if (type(hinh) is HinhVuong and hinh.TinhChuVi() == x):
-                result.ThemHinh(hinh)
+        for hh in self.danhSach:
+            if type(hh) is hinh and hh.TinhChuVi() == x:
+                result.ThemHinh(hh)
         return result
 
-    def TimHinhVuongCoDienTich(self, x):
-        result = DanhSachHinhHoc()
-        for hinh in self.danhSach:
-            if (type(hinh) is HinhVuong and hinh.TinhDienTich() == x):
-                result.ThemHinh(hinh)
+    def TimHinhCoDienTich(self,x, hinh=HinhHoc):
+        result =DanhSachHinhHoc()
+        for hh in self.danhSach:
+            if type(hh)is hinh and hh.TinhDienTich()==x:
+                result.ThemHinh(hh)
         return result
 
-    def TimChuViHinhVuongNhoNhat(self):
-        min = 10000000000000000000000
-        for hinh in self.danhSach:
-            if type(hinh) is HinhVuong and hinh.TinhChuVi() < min:
-                min = hinh.TinhChuVi()
-        return min
-
-    def TimChuViHinhVuongLonNhat(self):
-        max = -1
-        for hinh in self.danhSach:
-            if type(hinh) is HinhVuong and hinh.TinhChuVi() > max:
-                max = hinh.TinhChuVi()
+    def TimChuViMax(self,hinh=HinhHoc):
+        max= -1
+        for hh in self.danhSach:
+            if type(hh)is hinh and hh.TinhChuVi()>max:
+                max=hh.TinhChuVi()
         return max
-
-    def TimHinhVuongCoChuViNhoNhat(self):
-        return self.TimHinhVuongCoChuVi(self.TimChuViHinhVuongNhoNhat())
-
-    def TimHinhVuongCoChuViLonNhat(self):
-        return self.TimHinhVuongCoChuVi(self.TimChuViHinhVuongLonNhat())
-
-# endregion
-
-# region Hình Tròn
-    def TimHinhTronCoChuVi(self, x):
-        result = DanhSachHinhHoc()
-        for hinh in self.danhSach:
-            if (type(hinh) is HinhTron and hinh.TinhChuVi() == x):
-                result.ThemHinh(hinh)
-        return result
-
-    def TimHinhTronCoDienTich(self, x):
-        result = DanhSachHinhHoc()
-        for hinh in self.danhSach:
-            if (type(hinh) is HinhTron and hinh.TinhDienTich() == x):
-                result.ThemHinh(hinh)
-        return result
-
-    def TimChuViHinhTronNhoNhat(self):
-        min = 10000000000000000000000
-        for hinh in self.danhSach:
-            if type(hinh) is HinhTron and hinh.TinhChuVi() < min:
-                min = hinh.TinhChuVi()
-        return min
-
-    def TimChuViHinhTronLonNhat(self):
-        max = -1
-        for hinh in self.danhSach:
-            if type(hinh) is HinhTron and hinh.TinhChuVi() > max:
-                max = hinh.TinhChuVi()
-        return max
-
-    def TimHinhTronCoChuViNhoNhat(self):
-        return self.TimHinhTronCoChuVi(self.TimChuViHinhTronNhoNhat())
-
-    def TimHinhTronCoChuViLonNhat(self):
-        return self.TimHinhTronCoChuVi(self.TimChuViHinhTronLonNhat())
     
-# endregion
-
-# region Hình Chữ Nhật
-    def TimHinhChuNhatCoChuVi(self, x):
-        result = DanhSachHinhHoc()
-        for hinh in self.danhSach:
-            if type(hinh) is HinhChuNhat and hinh.TinhChuVi() == x:
-                result.ThemHinh(hinh)
-        return result
-
-    def TimHinhChuNhatCoDienTich(self, x):
-        result = DanhSachHinhHoc()
-        for hinh in self.danhSach:
-            if type(hinh) is HinhChuNhat and hinh.TinhDienTich() == x:
-                result.ThemHinh(hinh)
-        return result
-    
-    def TimChuViHinhChuNhatNhoNhat(self):
-        min = 10000000000000000000000
-        for hinh in self.danhSach:
-            if type(hinh) is HinhChuNhat and hinh.TinhChuVi() < min:
-                min = hinh.TinhChuVi()
+    def TimChuViMin(self,hinh=HinhHoc):
+        min= 1000000000000000000000000
+        for hh in self.danhSach:
+            if type(hh)is hinh and hh.TinhChuVi()<min:
+                min=hh.TinhChuVi()
         return min
-
-    def TimChuViHinhChuNhatLonNhat(self):
-        max = -1
-        for hinh in self.danhSach:
-            if type(hinh) is HinhChuNhat and hinh.TinhChuVi() > max:
-                max = hinh.TinhChuVi()
+    
+    def TimDienTichTinhDienTichMax(self,hinh=HinhHoc):
+        max= -1
+        for hh in self.danhSach:
+            if type(hh)is hinh and hh.TinhDienTich()>max:
+                max=hh.TinhDienTich()
         return max
 
-    def TimHinhChuNhatCoChuViNhoNhat(self):
-        return self.TimHinhChuNhatCoChuVi(self.TimChuViHinhChuNhatNhoNhat())
+    def TimDienTichTinhDienTichMin(self,hinh=HinhHoc):
+        min= 1000000000000000000000000
+        for hh in self.danhSach:
+            if type(hh)is hinh and hh.TinhDienTich()<min:
+                min=hh.TinhDienTich()
+        return min
 
-    def TimHinhChuNhatCoChuViLonNhat(self):
-        return self.TimHinhChuNhatCoChuVi(self.TimChuViHinhChuNhatLonNhat())
+    def TimHinhCoChuViLonNhat(self, hinh=HinhHoc,):
+        return self.TimHinhCoChuVi(self.TimChuViMax(hinh),hinh)
+
+    def TimHinhCoChuViNhoNhat(self, hinh=HinhHoc,):
+        return self.TimHinhCoChuVi(self.TimChuViMin(hinh),hinh)
+
 # endregion

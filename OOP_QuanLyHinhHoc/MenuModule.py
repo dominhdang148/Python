@@ -2,6 +2,9 @@
 from os import system
 
 from DanhSachHinhHoc import DanhSachHinhHoc
+from HinhChuNhat import HinhChuNhat
+from HinhTron import HinhTron
+from HinhVuong import HinhVuong
 
 features = ("Thoat chuong trinh",
             "Doc file va nhap du lieu",
@@ -50,6 +53,7 @@ def ChonMenu(soMenu=len(features)-1, condition=0):
 
 
 def XuLyMenu(menu, ds):
+
     system('cls')
     # region Case 0
     if features[menu] == "Thoat chuong trinh":
@@ -76,7 +80,7 @@ def XuLyMenu(menu, ds):
                 break
             elif kieuHinh[choose] == "Hinh Vuong":
                 x = float(input("Xin hay nhap chu vi cua hinh vuong: "))
-                ketQua = ds.TimHinhVuongCoChuVi(x)
+                ketQua = ds.TimHinhCoChuVi(x, HinhVuong)
                 if len(ketQua.danhSach) != 0:
                     print("Danh sach hinh vuong co chu vi {} la: ".format(x))
                     print(ketQua)
@@ -87,7 +91,7 @@ def XuLyMenu(menu, ds):
                 print(ds)
             elif kieuHinh[choose] == "Hinh Tron":
                 x = float(input("Xin hay nhap chu vi cua hinh tron: "))
-                ketQua = ds.TimHinhTronCoChuVi(x)
+                ketQua = ds.TimHinhCoChuVi(x, HinhTron)
                 if len(ketQua.danhSach) != 0:
                     print("Danh sach hinh tron co chu vi {} la: ".format(x))
                     print(ketQua)
@@ -98,7 +102,7 @@ def XuLyMenu(menu, ds):
                 print(ds)
             elif kieuHinh[choose] == "Hinh Chu Nhat":
                 x = float(input("Xin hay nhap chu vi cua hinh chu nhat: "))
-                ketQua = ds.TimHinhChuNhatCoChuVi(x)
+                ketQua = ds.TimHinhCoChuVi(x, HinhChuNhat)
                 if len(ketQua.danhSach) != 0:
                     print("Danh sach hinh chu nhat co chu vi {} la: ".format(x))
                     print(ketQua)
@@ -107,10 +111,11 @@ def XuLyMenu(menu, ds):
                         "Khong co hinh chu nhat co dien tich {} trong danh sach hien hanh!".format(x))
                 print("Danh sach hinh hoc hien hanh:")
                 print(ds)
+                
             input("Nhan phim Enter de tiep tuc!")
     # endregion
     # region Case 4
-    elif features[menu] == "Tim tat ca hinh vuong/hinh tron/hinh chu nhat cho dien tich X":
+    elif features[menu] == "Tim tat ca hinh vuong/hinh tron/hinh chu nhat co dien tich X":
         choose = "x"
         ketQua = DanhSachHinhHoc()
         while choose != 0:
@@ -120,7 +125,7 @@ def XuLyMenu(menu, ds):
                 break
             elif kieuHinh[choose] == "Hinh Vuong":
                 x = float(input("Xin hay nhap dien tich cua hinh vuong: "))
-                ketQua = ds.TimHinhVuongCoDienTich(x)
+                ketQua = ds.TimHinhCoDienTich(x, HinhVuong)
                 if len(ketQua.danhSach) != 0:
                     print("Danh sach hinh vuong co dien tich {} la: ".format(x))
                     print(ketQua)
@@ -131,7 +136,7 @@ def XuLyMenu(menu, ds):
                 print(ds)
             elif kieuHinh[choose] == "Hinh Tron":
                 x = float(input("Xin hay nhap dien tich cua hinh tron: "))
-                ketQua = ds.TimHinhTronCoDienTich(x)
+                ketQua = ds.TimHinhCoDienTich(x, HinhTron)
                 if len(ketQua.danhSach) != 0:
                     print("Danh sach hinh tron co dien tich {} la: ".format(x))
                     print(ketQua)
@@ -142,7 +147,7 @@ def XuLyMenu(menu, ds):
                 print(ds)
             elif kieuHinh[choose] == "Hinh Chu Nhat":
                 x = float(input("Xin hay nhap dien tich cua hinh chu nhat: "))
-                ketQua = ds.TimHinhChuNhatCoDienTich(x)
+                ketQua = ds.TimHinhCCoDienTich(x, HinhChuNhat)
                 if len(ketQua.danhSach) != 0:
                     print("Danh sach hinh chu nhat co dien tich {} la: ".format(x))
                     print(ketQua)
@@ -164,8 +169,8 @@ def XuLyMenu(menu, ds):
             if kieuHinh[choose] == "Thoat":
                 break
             elif kieuHinh[choose] == "Hinh Vuong":
-                listMin = ds.TimHinhVuongCoChuViNhoNhat()
-                listMax = ds.TimHinhVuongCoChuViLonNhat()
+                listMin = ds.TimHinhCoChuViNhoNhat(HinhVuong)
+                listMax = ds.TimHinhCoChuViLonNhat(HinhVuong)
                 print("Danh sach hinh vuong co chu vi nho nhat la: ")
                 print(listMin)
                 print("Danh sach hinh vuong co chu vi lon nhat la: ")
@@ -173,8 +178,8 @@ def XuLyMenu(menu, ds):
                 print("Danh sach hinh hoc hien hanh:")
                 print(ds)
             elif kieuHinh[choose] == "Hinh Tron":
-                listMin = ds.TimHinhTronCoChuViNhoNhat()
-                listMax = ds.TimHinhTronCoChuViLonNhat()
+                listMin = ds.TimHinhCoChuViNhoNhat(HinhTron)
+                listMax = ds.TimHinhCoChuViLonNhat(HinhTron)
                 print("Danh sach hinh tron co chu vi nho nhat la: ")
                 print(listMin)
                 print("Danh sach hinh tron co chu vi lon nhat la: ")
@@ -182,8 +187,8 @@ def XuLyMenu(menu, ds):
                 print("Danh sach hinh hoc hien hanh:")
                 print(ds)
             elif kieuHinh[choose] == "Hinh Chu Nhat":
-                listMin = ds.TimHinhChuNhatCoChuViNhoNhat()
-                listMax = ds.TimHinhChuNhatCoChuViLonNhat()
+                listMin = ds.TimHinhCoChuViNhoNhat(HinhChuNhat)
+                listMax = ds.TimHinhCoChuViLonNhat(HinhChuNhat)
                 print("Danh sach hinh chu nhat co chu vi nho nhat la: ")
                 print(listMin)
                 print("Danh sach hinh chu nhat co chu vi lon nhat la: ")
@@ -191,6 +196,9 @@ def XuLyMenu(menu, ds):
                 print("Danh sach hinh hoc hien hanh:")
                 print(ds)
             input("Nhan phim Enter de tiep tuc!")
+    # endregion
+    # region Case 6
+
     # endregion
 
     input("Nhan phim Enter de tiep tuc! ")

@@ -1,0 +1,2 @@
+1:20 AM 3/27/2022: Hoàn thành bước đầu của ứng dụng (nhập xuất dữ liệu và 3 chức năng)
+4:46 PM 3/27/2022: Cập nhật lại code sau khi biết mình ngu :"> (Python ko cần generic, muốn thì cứ truyền bằng tham số thou :v)
