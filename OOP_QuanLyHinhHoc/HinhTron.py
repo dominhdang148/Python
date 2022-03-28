@@ -4,14 +4,16 @@ import math
 
 
 class HinhTron(HinhHoc):
+    banKinh = 0
 
     def __init__(self, radius):
-        self.__banKinh = radius
+        self.banKinh = radius
 
     def TinhChuVi(self):
-        return float(round(self.__banKinh*math.pi*2,2))
+        return float(round(self.banKinh*math.pi*2, 2))
+
     def TinhDienTich(self):
-        return float(round(self.__banKinh*self.__banKinh*math.pi, 2))
+        return float(round(self.banKinh*self.banKinh*math.pi, 2))
 
     def __str__(self):
-        return "Hinh tron ban kinh "+str(self.__banKinh)+" co dien tich "+str(self.TinhDienTich())+" va chu vi "+str(self.TinhChuVi())
+        return "Hinh tron ban kinh "+str(self.banKinh)+" co dien tich "+str(self.TinhDienTich())+" va chu vi "+str(self.TinhChuVi())

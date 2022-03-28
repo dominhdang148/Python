@@ -8,8 +8,8 @@ import MenuModule
 # =====================================================================
 
 menu = 'a'
-danhSach=DanhSachHinhHoc()
+#danhSach=DanhSachHinhHoc()
 while menu != 0:
     menu = MenuModule.ChonMenu()
-    MenuModule.XuLyMenu(menu,danhSach)
+    MenuModule.XuLyMenu(menu)
 system('cls')

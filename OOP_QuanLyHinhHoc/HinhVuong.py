@@ -3,15 +3,16 @@ from HinhHoc import HinhHoc
 
 
 class HinhVuong(HinhHoc):
+    canh = 0
 
     def __init__(self, edge):
-        self.__canh = edge
+        self.canh = edge
 
     def TinhChuVi(self):
-        return float(self.__canh*4)
+        return float(self.canh*4)
 
     def TinhDienTich(self):
-        return float(self.__canh*self.__canh)
+        return float(self.canh*self.canh)
 
     def __str__(self):
-        return "Hinh vuong canh "+str(self.__canh)+" co dien tich "+str(self.TinhDienTich())+" va chu vi "+str(self.TinhChuVi())
+        return "Hinh vuong canh "+str(self.canh)+" co dien tich "+str(self.TinhDienTich())+" va chu vi "+str(self.TinhChuVi())

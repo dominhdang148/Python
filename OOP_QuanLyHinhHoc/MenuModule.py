@@ -1,4 +1,5 @@
 
+
 from os import system
 
 from DanhSachHinhHoc import DanhSachHinhHoc
@@ -11,11 +12,15 @@ features = ("Thoat chuong trinh",
             "Xem danh sach hien hanh",
             "Tim tat ca hinh vuong/hinh tron/hinh chu nhat cho chu vi X",
             "Tim tat ca hinh vuong/hinh tron/hinh chu nhat co dien tich X",
-            "Tim tat ca hinh vuong/ hinh tron/ hinh chu nhat co chu vi lon nhat/nho nhat")
+            "Tim tat ca hinh vuong/ hinh tron/ hinh chu nhat co chu vi lon nhat/nho nhat",
+            "Tim tat ca hinh vuong/ hinh tron/ hinh chu nhat co dien tich lon nhat/nho nhat",
+            "Tinh tong chu vi dien tich cac hinh vuong/ hinh tron/ hinh chu nhat",
+            "Dem so luong hing vuong/ hinh tron/ hinh chu nhat")
 kieuHinh = ("Thoat",
             "Hinh Vuong",
             "Hinh Tron",
             "Hinh Chu Nhat")
+ds = DanhSachHinhHoc()
 
 
 def XuatMenu():
@@ -52,8 +57,7 @@ def ChonMenu(soMenu=len(features)-1, condition=0):
     return menu
 
 
-def XuLyMenu(menu, ds):
-
+def XuLyMenu(menu):
     system('cls')
     # region Case 0
     if features[menu] == "Thoat chuong trinh":
@@ -111,7 +115,7 @@ def XuLyMenu(menu, ds):
                         "Khong co hinh chu nhat co dien tich {} trong danh sach hien hanh!".format(x))
                 print("Danh sach hinh hoc hien hanh:")
                 print(ds)
-                
+
             input("Nhan phim Enter de tiep tuc!")
     # endregion
     # region Case 4
@@ -198,7 +202,108 @@ def XuLyMenu(menu, ds):
             input("Nhan phim Enter de tiep tuc!")
     # endregion
     # region Case 6
-
+    elif features[menu] == "Tim tat ca hinh vuong/ hinh tron/ hinh chu nhat co dien tich lon nhat/nho nhat":
+        choose = "x"
+        listMax = DanhSachHinhHoc()
+        listMin = DanhSachHinhHoc()
+        while choose != 0:
+            choose = ChonMenu(len(kieuHinh)-1, 1)
+            system('cls')
+            if kieuHinh[choose] == "Thoat":
+                break
+            elif kieuHinh[choose] == "Hinh Vuong":
+                listMax = ds.TimHinhVuongCoCanhLonNhat_NhoNhat(1)
+                listMin = ds.TimHinhVuongCoCanhLonNhat_NhoNhat(0)
+                print("Danh sach hinh vuong co canh lon nhat la: ")
+                print(listMax)
+                print("Danh sach hinh vuong co canh nho nhat la: ")
+                print(listMin)
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+            elif kieuHinh[choose] == "Hinh Tron":
+                listMax = ds.TimHinhTronCoBanKinhLonNhat_NhoNhat(1)
+                listMin = ds.TimHinhTronCoBanKinhLonNhat_NhoNhat(0)
+                print("Danh sach hinh tron co ban kinh lon nhat la: ")
+                print(listMax)
+                print("Danh sach hinh tron co ban kinh nho nhat la: ")
+                print(listMin)
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+            elif kieuHinh[choose] == "Hinh Chu Nhat":
+                listMax = ds.TimHinhChuNhatCoCD_CRLonNhat_NhoNhat(1)
+                listMin = ds.TimHinhChuNhatCoCD_CRLonNhat_NhoNhat(0)
+                print("Danh sach hinh chu nhat co chieu dai lon nhat la: ")
+                print(listMax)
+                print("Danh sach hinh chu nha co chỉu rong nho nhat la: ")
+                print(listMin)
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+            input("Nhan phim Enter de tiep tuc!")
+    # endregion
+    # region Case 7
+    elif features[menu] == "Tinh tong chu vi dien tich cac hinh vuong/ hinh tron/ hinh chu nhat":
+        choose = "x"
+        resultP = 0
+        resultS = 0
+        while choose != 0:
+            choose = ChonMenu(len(kieuHinh)-1, 1)
+            system('cls')
+            if kieuHinh[choose] == "Thoat":
+                break
+            elif kieuHinh[choose] == "Hinh Vuong":
+                resultP = ds.TinhTongChuViHinh(HinhVuong)
+                resultS = ds.TinhTongDienTichHinh(HinhVuong)
+                print(
+                    "Tong chu vi tat ca hinh vuong trong danh sach la: {}".format(resultP))
+                print(
+                    "Tong dien tich tat ca hinh vuong trong danh sach la: {}".format(resultS))
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+            elif kieuHinh[choose] == "Hinh Tron":
+                resultP = ds.TinhTongChuViHinh(HinhTron)
+                resultS = ds.TinhTongDienTichHinh(HinhTron)
+                print(
+                    "Tong chu vi tat ca hinh tron trong danh sach la: {}".format(resultP))
+                print(
+                    "Tong dien tich tat ca hinh tron trong danh sach la: {}".format(resultS))
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+            elif kieuHinh[choose] == "Hinh Chu Nhat":
+                resultP = ds.TinhTongChuViHinh(HinhChuNhat)
+                resultS = ds.TinhTongDienTichHinh(HinhChuNhat)
+                print(
+                    "Tong chu vi tat ca hinh chu nhat trong danh sach la: {}".format(resultP))
+                print(
+                    "Tong dien tich tat ca hinh chu nhat trong danh sach la: {}".format(resultS))
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+            input("Nhan phim Enter de tiep tuc!")
+    # endregion
+    # region Case 8
+    elif features[menu] == "Dem so luong hing vuong/ hinh tron/ hinh chu nhat":
+        choose = "x"
+        ketQua = 0
+        while choose != 0:
+            choose = ChonMenu(len(kieuHinh)-1, 1)
+            system('cls')
+            if kieuHinh[choose] == "Thoat":
+                break
+            elif kieuHinh[choose] == "Hinh Vuong":
+                ketQua=ds.DemSoLuongHinh(HinhVuong)
+                print("So luong hinh vuong co tronh danh sach la: {}".format(ketQua))
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+            elif kieuHinh[choose] == "Hinh Tron":
+                ketQua=ds.DemSoLuongHinh(HinhTron)
+                print("So luong hinh tron co tronh danh sach la: {}".format(ketQua))
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+            elif kieuHinh[choose] == "Hinh Chu Nhat":
+                ketQua=ds.DemSoLuongHinh(HinhChuNhat)
+                print("So luong hinh chu nhat co tronh danh sach la: {}".format(ketQua))
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+            input("Nhan phim Enter de tiep tuc!")
     # endregion
 
     input("Nhan phim Enter de tiep tuc! ")

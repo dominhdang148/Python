@@ -1,4 +1,4 @@
-hoose = "x"
+choose = "x"
         while choose != 0:
             choose = ChonMenu(len(kieuHinh)-1, 1)
             system('cls')

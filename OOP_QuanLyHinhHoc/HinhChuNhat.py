@@ -2,6 +2,10 @@ from HinhHoc import HinhHoc
 
 
 class HinhChuNhat(HinhHoc):
+
+    chieuDai = 0
+    chieuRong = 0
+
     def __init__(self, a, b):
         if a > b:
             self.chieuDai = a
