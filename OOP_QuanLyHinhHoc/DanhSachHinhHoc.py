@@ -79,17 +79,28 @@ class DanhSachHinhHoc:
         return min
 
     def TimHinhCoChuViLonNhat(self, hinh=HinhHoc,):
-        return self.TimHinhCoChuVi(self.TimChuViMax(hinh), hinh)
+        if hinh != HinhHoc:
+            return self.TimHinhCoChuVi(self.TimChuViMax(hinh), hinh)
+        else:
+            return self.TimHinhChungCoChuVi(self.TimChuViHinhLonNhat())
 
     def TimHinhCoChuViNhoNhat(self, hinh=HinhHoc,):
-        return self.TimHinhCoChuVi(self.TimChuViMin(hinh), hinh)
+        if hinh != HinhHoc:
+            return self.TimHinhCoChuVi(self.TimChuViMin(hinh), hinh)
+        else:
+            return self.TimHinhChungCoChuVi(self.TimChuViHinhNhoNhat())
 
     def TimHinhCoDienTichLonNhat(self, hinh=HinhHoc):
-        return self.TimHinhCoDienTich(self.TimDienTichMax(), hinh)
-
+        if hinh != HinhHoc:
+            return self.TimHinhCoDienTich(self.TimDienTichMax(), hinh)
+        else:
+            return self.TimHinhChungCoDienTich(self.TimDienTichHinhLonNhat())
+            
     def TimHinhCoDienTichNhoNhat(self, hinh=HinhHoc):
-        return self.TimHinhCoDienTich(self.TimDienTichMin(), hinh)
-
+        if hinh != HinhHoc:
+            return self.TimHinhCoDienTich(self.TimDienTichMin(), hinh)
+        else:
+            return self.TimHinhChungCoDienTich(self.TimDienTichHinhNhoNhat())
     def TinhTongDienTichHinh(self, hinh=HinhHoc):
         sum = 0
         for graph in self.danhSach:
@@ -108,7 +119,7 @@ class DanhSachHinhHoc:
         count = 0
         for graph in self.danhSach:
             if type(graph) is hinh:
-                count+=1
+                count += 1
         return count
 
     # endregion
@@ -208,4 +219,48 @@ class DanhSachHinhHoc:
         else:
             return self.TimHinhChuNhatCoChieuDai_ChieuRong(self.TimChieuDaiHinhChuNhatLonNhat(), condition)
 
+    # def SapXepDanhSachHinh(self, condition)
+    #     self.danhSach.sort(key=)/
+
+    def TimChuViHinhLonNhat(self):
+        max = -1
+        for hinh in self.danhSach:
+            if hinh.TinhChuVi() > max:
+                max = hinh.TinhChuVi()
+        return max
+
+    def TimChuViHinhNhoNhat(self):
+        min = 1000000000000000000
+        for hinh in self.danhSach:
+            if hinh.TinhChuVi() < min:
+                min = hinh.TinhChuVi()
+        return min
+
+    def TimHinhChungCoChuVi(self, x):
+        result = DanhSachHinhHoc()
+        for hinh in self.danhSach:
+            if hinh.TinhChuVi() == x:
+                result.ThemHinh(hinh)
+        return result
+
+    def TimDienTichHinhLonNhat(self):
+        max = -1
+        for hinh in self.danhSach:
+            if hinh.TinhDienTich() > max:
+                max = hinh.TinhDienTich()
+        return max
+
+    def TimDienTichHinhNhoNhat(self):
+        min = 1000000000000000
+        for hinh in self.danhSach:
+            if hinh.TinhDienTich() < min:
+                min = hinh.TinhDienTich()
+        return min
+
+    def TimHinhChungCoDienTich(self, x):
+        result = DanhSachHinhHoc()
+        for hinh in self.danhSach:
+            if hinh.TinhDienTich() == x:
+                result.ThemHinh(hinh)
+        return result
 # endregion

@@ -1,6 +1,5 @@
-class HinhHoc:
-    def TinhChuVi():
-        return 0
-
-    def TinhDienTich():
-        return 0
+class HinhHoc():
+    def TinhChuVi(self):
+        pass
+    def TinhDienTich(self):
+        pass
