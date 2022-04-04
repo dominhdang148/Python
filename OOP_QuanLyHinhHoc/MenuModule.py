@@ -18,7 +18,9 @@ features = ("Thoat chuong trinh",
             "Dem so luong hing vuong/ hinh tron/ hinh chu nhat",
             "Sap xep danh sach hinh",
             "Tim cac hinh co chu vi lon nhat/nho nhat",
-            "Tim cac hinh co dien tich lon nhat/nho nhat")
+            "Tim cac hinh co dien tich lon nhat/nho nhat",
+            "Xoa hinh co chu vi lon nhat/nho nhat",
+            "Xoa hinh co dien tich lon nhat/nho nhat")
 kieuHinh = ("Thoat",
             "Hinh Vuong",
             "Hinh Tron",
@@ -342,4 +344,27 @@ def XuLyMenu(menu):
         print("Danh sach hinh hoc hien hanh:")
         print(ds)
     # endregion
+    # region Case 12
+    elif features[menu]=="Xoa hinh co chu vi lon nhat/nho nhat":
+        print("Danh sach hinh hoc hien hanh: ")
+        print(ds)
+        input("Nhan phim Enter de xoa hinh co chu vi lon nhat va nho nhat!")
+        system('cls')
+        ds.XoaHinhCoChuViLonNhat_NhoNhat(0)
+        ds.XoaHinhCoChuViLonNhat_NhoNhat(1)
+        print("Da xoa thanh cong! Danh sach hinh hoc hien hanh: ")
+        print(ds)
+    # endregion
+    # region Case 13
+    elif features[menu]=="Xoa hinh co dien tich lon nhat/nho nhat":
+        print("Danh sach hinh hoc hien hanh: ")
+        print(ds)
+        input("Nhan phim Enter de xoa hinh co dien tich lon nhat va nho nhat!")
+        system('cls')
+        ds.XoaHinhCoDienTichLonNhat_NhoNhat(0)
+        ds.XoaHinhCoDienTichLonNhat_NhoNhat(1)
+        print("Da xoa thanh cong! Danh sach hinh hoc hien hanh: ")
+        print(ds)
+    # endregion
     input("Nhan phim Enter de tiep tuc! ")
+    

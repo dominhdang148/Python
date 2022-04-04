@@ -95,12 +95,13 @@ class DanhSachHinhHoc:
             return self.TimHinhCoDienTich(self.TimDienTichMax(), hinh)
         else:
             return self.TimHinhChungCoDienTich(self.TimDienTichHinhLonNhat())
-            
+
     def TimHinhCoDienTichNhoNhat(self, hinh=HinhHoc):
         if hinh != HinhHoc:
             return self.TimHinhCoDienTich(self.TimDienTichMin(), hinh)
         else:
             return self.TimHinhChungCoDienTich(self.TimDienTichHinhNhoNhat())
+
     def TinhTongDienTichHinh(self, hinh=HinhHoc):
         sum = 0
         for graph in self.danhSach:
@@ -263,4 +264,30 @@ class DanhSachHinhHoc:
             if hinh.TinhDienTich() == x:
                 result.ThemHinh(hinh)
         return result
+
+    def XoaHinhCoChuVi(self, x):
+        for hinh in self.danhSach:
+            if hinh.TinhChuVi() == x:
+                self.danhSach.remove(hinh)
+
+    def XoaHinhCoDienTich(self, x):
+        for hinh in self.danhSach:
+            if hinh.TinhDienTich() == x:
+                self.danhSach.remove(hinh)
+
+    # condition = 0 -> Xóa hình có chu vi nhỏ nhất
+    # condition = 1 -> Xóa hính có chu vi lớn nhất
+    def XoaHinhCoChuViLonNhat_NhoNhat(self, condition):
+        if condition == 0:
+            self.XoaHinhCoChuVi(self.TimChuViHinhNhoNhat())
+        else:
+            self.XoaHinhCoChuVi(self.TimChuViHinhLonNhat())
+
+    # condition = 0 -> Xóa hình có chu vi nhỏ nhất
+    # condition = 1 -> Xóa hính có chu vi lớn nhất
+    def XoaHinhCoDienTichLonNhat_NhoNhat(self, condition):
+        if condition == 0:
+            self.XoaHinhCoDienTich(self.TimDienTichHinhNhoNhat())
+        else:
+            self.XoaHinhCoDienTich(self.TimDienTichHinhLonNhat())
 # endregion
