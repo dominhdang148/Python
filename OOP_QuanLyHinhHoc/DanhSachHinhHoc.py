@@ -37,7 +37,7 @@ class DanhSachHinhHoc:
         return s
 # endregion
 
-# region Generic
+  # region Generic
     def TimHinhCoChuVi(self, x, hinh=HinhHoc):
         result = DanhSachHinhHoc()
         for hh in self.danhSach:
@@ -322,4 +322,7 @@ class DanhSachHinhHoc:
         temp.danhSach = sorted(
             self.danhSach, key=self.TimDienTich, reverse=condition)
         return temp
+
+    def XoaHinhTaiViTri(self, x):
+        self.danhSach.remove(self.danhSach[x])
 # endregion
