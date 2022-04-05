@@ -6,6 +6,8 @@ from HinhChuNhat import HinhChuNhat
 
 
 class DanhSachHinhHoc:
+    danhSach = []
+
     def __init__(self):
         self.danhSach = []
 # region Input/Output
@@ -95,12 +97,14 @@ class DanhSachHinhHoc:
             return self.TimHinhCoDienTich(self.TimDienTichMax(), hinh)
         else:
             return self.TimHinhChungCoDienTich(self.TimDienTichHinhLonNhat())
+        # return self.TimHinhCoDienTich(self.TimDienTichMax(), hinh)
 
     def TimHinhCoDienTichNhoNhat(self, hinh=HinhHoc):
         if hinh != HinhHoc:
             return self.TimHinhCoDienTich(self.TimDienTichMin(), hinh)
         else:
             return self.TimHinhChungCoDienTich(self.TimDienTichHinhNhoNhat())
+       # return self.TimHinhCoDienTich(self.TimDienTichMin(), hinh)
 
     def TinhTongDienTichHinh(self, hinh=HinhHoc):
         sum = 0
@@ -290,4 +294,32 @@ class DanhSachHinhHoc:
             self.XoaHinhCoDienTich(self.TimDienTichHinhNhoNhat())
         else:
             self.XoaHinhCoDienTich(self.TimDienTichHinhLonNhat())
+
+    def TimChuVi(self, e):
+        return e.TinhChuVi()
+
+    def TimDienTich(self, e):
+        return e.TinhDienTich()
+
+    # Condition = True -> Sắp xếp theo chiều giảm của chu vi
+    # Condition = False (không có tham số truyền vào) -> Sắp xếp theo chiều tăng dần của chu vi
+    def SapXepHinhTheoChuVi(self, condition=False):
+        self.danhSach.sort(key=self.TimChuVi, reverse=condition)
+
+    # Condition = True -> Sắp xếp theo chiều giảm của chu vi
+    # Condition = False (không có tham số truyền vào) -> Sắp xếp theo chiều tăng dần của chu vi
+    def SapXepHinhTheoDienTich(self, condition=False):
+        self.danhSach.sort(key=self.TimDienTich, reverse=condition)
+
+    def HienThiTatCaCacHinhTheoChuVi(self, condition=False):
+        temp = DanhSachHinhHoc()
+        temp.danhSach = sorted(
+            self.danhSach, key=self.TimChuVi, reverse=condition)
+        return temp
+
+    def HienThiTatCaCacHinhTheoDienTich(self, condition=False):
+        temp = DanhSachHinhHoc()
+        temp.danhSach = sorted(
+            self.danhSach, key=self.TimDienTich, reverse=condition)
+        return temp
 # endregion

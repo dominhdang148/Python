@@ -7,7 +7,8 @@ class HinhVuong(HinhHoc):
 
     def __init__(self, edge):
         self.canh = edge
-
+        super().TinhChuVi()
+        super().TinhDienTich()
     def TinhChuVi(self):
         return float(self.canh*4)
 

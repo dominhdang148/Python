@@ -8,6 +8,8 @@ class HinhTron(HinhHoc):
 
     def __init__(self, radius):
         self.banKinh = radius
+        super().TinhChuVi()
+        super().TinhDienTich()
 
     def TinhChuVi(self):
         return float(round(self.banKinh*math.pi*2, 2))

@@ -1,5 +1,6 @@
 
 from os import system
+from tkinter import Menu
 from traceback import print_tb
 
 from DanhSachHinhHoc import DanhSachHinhHoc
@@ -20,7 +21,8 @@ features = ("Thoat chuong trinh",
             "Tim cac hinh co chu vi lon nhat/nho nhat",
             "Tim cac hinh co dien tich lon nhat/nho nhat",
             "Xoa hinh co chu vi lon nhat/nho nhat",
-            "Xoa hinh co dien tich lon nhat/nho nhat")
+            "Xoa hinh co dien tich lon nhat/nho nhat",\
+            "Hien thi danh sach hinh hoc theo chieu tang/giam cua chu vi/dien tich")
 kieuHinh = ("Thoat",
             "Hinh Vuong",
             "Hinh Tron",
@@ -311,17 +313,37 @@ def XuLyMenu(menu):
             if kieuSapXep[choose] == "Thoat":
                 break
             elif kieuSapXep[choose] == "Sap xep theo chieu tang chu vi":
-                print("Chuong trinh dangsap xep theo chieu tang chu vi")
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+                input("Nhan 1 phim bat ky de sap xep danh sach hinh theo chieu tang chu vi")
+                system('cls')
+                ds.SapXepHinhTheoChuVi()
             elif kieuSapXep[choose] == "Sap xep theo chieu giam chu vi":
-                print("Chuong trinh danh sap xep theo chieu gian chu vi")
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+                input("Nhan 1 phim bat ky de sap xep danh sach hinh theo chieu giam chu vi")
+                system('cls')
+                ds.SapXepHinhTheoChuVi(True)
             elif kieuSapXep[choose] == "Sap xep theo chieu tang dien tich":
-                print("Chuong trinh dang sap xep theo chieu tang dien tich")
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+                input("Nhan 1 phim bat ky de sap xep danh sach hinh theo chieu tang dien tich")
+                system('cls')
+                ds.SapXepHinhTheoDienTich()
+                print("Sap xep thanh cong! Danh sach hinh hoc sau khi sap xep: ")
+                print(ds)
             elif kieuSapXep[choose] == "Sap xep theo chieu giam dien tich":
-                print("Chuong trinh dang sap xep theo chieu giam dien tich")
+                print("Danh sach hinh hoc hien hanh:")
+                print(ds)
+                input("Nhan 1 phim bat ky de sap xep danh sach hinh theo chieu tang dien tich")
+                system('cls')
+                ds.SapXepHinhTheoDienTich()
+                print("Sap xep thanh cong! Danh sach hinh hoc sau khi sap xep: ")
+                print(ds)
             print("Danh sach hinh hoc sau khi sap xep:")
             print(ds)
             input("Nhan phim Enter de tiep tuc")
-        # endregion
+     # endregion
     # region Case 10
     elif features[menu]=="Tim cac hinh co chu vi lon nhat/nho nhat":
         listMax=ds.TimHinhCoChuViLonNhat()
@@ -365,6 +387,29 @@ def XuLyMenu(menu):
         ds.XoaHinhCoDienTichLonNhat_NhoNhat(1)
         print("Da xoa thanh cong! Danh sach hinh hoc hien hanh: ")
         print(ds)
+    # endregion
+    # region Case 14
+    elif features[menu]=="Hien thi danh sach hinh hoc theo chieu tang/giam cua chu vi/dien tich":
+        choose = "x"
+        while choose != 0:
+            choose = ChonMenu(len(kieuSapXep)-1, 2)
+            system('cls')
+            if kieuSapXep[choose] == "Thoat":
+                break
+            elif kieuSapXep[choose] == "Sap xep theo chieu tang chu vi":
+                ketQua=ds.HienThiTatCaCacHinhTheoChuVi()
+                print("Danh sach hinh hoc theo chieu tang chu vi: ")
+            elif kieuSapXep[choose] == "Sap xep theo chieu giam chu vi":
+                ketQua=ds.HienThiTatCaCacHinhTheoChuVi(True)
+                print("Danh sach hinh hoc theo chieu giam chu vi: ")
+            elif kieuSapXep[choose] == "Sap xep theo chieu tang dien tich":
+                ketQua=ds.HienThiTatCaCacHinhTheoDienTich()
+                print("Danh sach hinh hoc theo chieu tang dien tich: ")
+            elif kieuSapXep[choose] == "Sap xep theo chieu giam dien tich":
+                ketQua=ds.HienThiTatCaCacHinhTheoDienTich(True)
+                print("Danh sach hinh hoc theo chieu giam dien tich: ")
+            print(ketQua)
+            input("Nhan phim Enter de tiep tuc")
     # endregion
     input("Nhan phim Enter de tiep tuc! ")
     

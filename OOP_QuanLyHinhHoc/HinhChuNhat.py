@@ -13,6 +13,8 @@ class HinhChuNhat(HinhHoc):
         else:
             self.chieuRong = a
             self.chieuDai = b
+        super().TinhChuVi()
+        super().TinhDienTich()
 
     def TinhChuVi(self):
         return float((self.chieuDai+self.chieuRong)*2)

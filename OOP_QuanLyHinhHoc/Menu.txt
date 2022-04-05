@@ -15,20 +15,20 @@ choose = "x"
             input("Nhan phim Enter de tiep tuc!")
 
 
- choose = "x"
-        while choose != 0:
-            choose = ChonMenu(len(kieuSapXep)-1, 2)
-            system('cls')
-            if kieuSapXep[choose] == "Thoat":
-                break
-            elif kieuSapXep[choose] == "Sap xep theo chieu tang chu vi":
-                print("Chuong trinh dangsap xep theo chieu tang chu vi")
-            elif kieuSapXep[choose] == "Sap xep theo chieu giam chu vi":
-                print("Chuong trinh danh sap xep theo chieu gian chu vi")
-            elif kieuSapXep[choose] == "Sap xep theo chieu tang dien tich":
-                print("Chuong trinh dang sap xep theo chieu tang dien tich")
-            elif kieuSapXep[choose] == "Sap xep theo chieu giam dien tich":
-                print("Chuong trinh dang sap xep theo chieu giam dien tich")
-            print("Danh sach hinh hoc sau khi sap xep:")
-            print(ds)
-            input("Nhan phim Enter de tiep tuc")
+choose = "x"
+    while choose != 0:
+        choose = ChonMenu(len(kieuSapXep)-1, 2)
+        system('cls')
+        if kieuSapXep[choose] == "Thoat":
+            break
+        elif kieuSapXep[choose] == "Sap xep theo chieu tang chu vi":
+            print("Chuong trinh dangsap xep theo chieu tang chu vi")
+        elif kieuSapXep[choose] == "Sap xep theo chieu giam chu vi":
+            print("Chuong trinh danh sap xep theo chieu gian chu vi")
+        elif kieuSapXep[choose] == "Sap xep theo chieu tang dien tich":
+            print("Chuong trinh dang sap xep theo chieu tang dien tich")
+        elif kieuSapXep[choose] == "Sap xep theo chieu giam dien tich":
+            print("Chuong trinh dang sap xep theo chieu giam dien tich")
+        print("Danh sach hinh hoc sau khi sap xep:")
+        print(ds)
+        input("Nhan phim Enter de tiep tuc")
