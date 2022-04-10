@@ -2,6 +2,7 @@
 
 #   - NumPy được sử đụng để làm việc với mảng. Các đối tượng mảng trong NumPy được gọi là ndarray.
 #   - Chúng ta có thể tạo ndarray bằng hàm array()
+
 from os import system
 from tempfile import tempdir
 import numpy as np  # Gọi thư viện NumPy và đặt tên thay thế là np
