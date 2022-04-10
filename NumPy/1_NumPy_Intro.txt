@@ -23,7 +23,7 @@ III. Tại sao NumPy nhanh hơn List?
 
 IV. NumPy được viết bằng ngôn ngữ gì?
 
-    -  NumPy là một thư viện dành cho Python. Do đó, một phần của thư viện được biết bằng Python.
+    - NumPy là một thư viện dành cho Python. Do đó, một phần của thư viện được biết bằng Python.
     - Tuy nhiên, để tối ưu tốc độ và tài nguyên lưu trữ, các thuật toán của NumPy được viết bằng C và C++
 
 V. Mã nguồn của NumPy:
