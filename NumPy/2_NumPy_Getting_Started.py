@@ -32,6 +32,6 @@ print(arr1)
 
 # IV. Kiểm tra Phiên bản NumPy
 
-#   - Thông tin về phiên bản của NumPy được lưu trong thuộc tính __version__
+#   - Thông tin về phiên bản của NumPy được lưu trong thuộc tính __verson__
 
 print(np.__version__)
