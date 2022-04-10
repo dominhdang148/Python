@@ -30,7 +30,7 @@ import numpy as np
 arr1 = np.array([4, 5, 6, 7, 8])
 print(arr1)
 
-# IV. Kiểm tra Phiên bản NumPy
+# IV. Kiểm tra Phiên bản của NumPy
 
 #   - Thông tin về phiên bản của NumPy được lưu trong thuộc tính __version__
 
