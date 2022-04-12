@@ -17,7 +17,7 @@ print(type(arr))
 #   - Để tạo một ndarray, chúng ta cũng co thể tryền vào một đối tượng kiểu list, tuple hoặc các cấu trúc dữ liệu tương đương với mảng vào phương thức array()
 #   - Phương thức này sẽ chuyển đối tượng làm đối số thành 1 đối tượng ndarray.
 
-arrTup = np.array((6, 7, 8, 9, 10))  # Truyền
+arrTup = np.array((6, 7, 8, 9, 10))  # Truyền 1 tuple vào hàm Array để tạo mảng arrTup
 print(arrTup)
 
 # II. Các chiều của Array:
