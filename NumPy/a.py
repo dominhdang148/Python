@@ -15,3 +15,18 @@ for x in arr:
     print(x)
 
 #  II. Duyệt mảng 2 chiều
+
+#   - Khi duyệt mảng 2 chiều, nó sẽ đi qua các hàng của mảng đó
+
+arr = np.array([[1,2,3],[4,5,6]])
+
+for x in arr:
+    print(x)
+
+#   NOTE: Nếu ta duyệt mảng n chiều, nó sẽ sẽ đi qua từng chiều thứ n-1 của mảng đó
+
+#   - Để trả về giá trị thực sự, ta phải duyệt từng chiều của mảng đó:
+
+for x in arr:
+    for y in x:
+        print(y)
