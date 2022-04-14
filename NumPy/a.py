@@ -30,3 +30,5 @@ for x in arr:
 for x in arr:
     for y in x:
         print(y)
+
+# III. Duyệt mảng 3 chiều
