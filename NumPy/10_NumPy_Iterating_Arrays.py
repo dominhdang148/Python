@@ -80,7 +80,7 @@ for x in np.nditer(arr[:, ::2]):    # Duyệt tất cả phần tử vô hướn
 
 #   - Liệt kê (Enumeration) nghĩa là đề cập đến số thứ tự của từng phần tử một trong Array
 
-#   - Trong quá trình duyệt mảng, đôi khi duyệt cả chỉ số index của phần tử đang duyệt cũng cần thiết. Vì thế, phương thúc ndenumerate() được sử dụng cho phép liệt kê này.
+#   - Trong quá trình duyệt mảng, đôi khi ta cần phải duyệt các pnần tử cùng với chỉ số của nó. Vì thế, phương thúc ndenumerate() được sử dụng cho phép liệt kê này.
 
 arr = np.array([1, 2, 3])
 for idx, x in np.ndenumerate(arr):
