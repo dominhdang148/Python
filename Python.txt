@@ -26,13 +26,15 @@ II. TÍNH NĂNG VÀ TRIẾT LÝ CỦA PYTHON:
 
     2 Triết lý của Python: 
 
-    Đẹp đẽ tốt hơn xấu xí
-    Minh bạch tốt hơn ngầm định
-    Đơn giản tốt hơn phức tạp
-    Phức tạp tốt hơn rắc rối
-    Tính dễ đọc rất quan trọng
+    - Python có 1 easter egg là bài thơ tên "Zen of Python". Bài thơ được viết dưới dạng thơ Haiku và nội dung là những quy tắc chỉ dẫn cho việc viết chương trình nói chung và lập trình Python nói riêng: 
 
-    // Có thể đọc bằng lệnh import this
+        Đẹp đẽ tốt hơn xấu xí
+        Minh bạch tốt hơn ngầm định
+        Đơn giản tốt hơn phức tạp
+        Phức tạp tốt hơn rắc rối
+        Tính dễ đọc rất quan trọng
+
+    // Có thể đọc bài thơ này bằng lệnh import this
 
 
 
