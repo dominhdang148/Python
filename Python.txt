@@ -1,0 +1,38 @@
+TẤT TẦN TẬT VỀ PYTHON
+
+I. TỔNG QUAN VỀ NGÔN NGỮ LẬP TRÌNH PYTHON:
+
+    1. Vài nét về Python:
+
+    - Python là ngôn ngữ lập trình bậc cao dành cho lập trình đa năng
+    - Python được tạo ra lần đầu vào năm 1991 bởi Guido van Rossum. Python là 1 dự án mã nguồn mở do Python Software Foundation quản lý.
+    - Python là một ngôn ngữ dễ đọc, dễ học, dễ nhớ do có cú pháp ngắn gọn, cấu trúc rõ ràng, thuận tiện cho người mới lập trình.
+    - Tương tự như Perl, Ruby, Scheme, Smalltalk, Tcl; Python tạo kiểu động và dùng cơ chế cấp phát bộ nhớ tự động.
+    - Ban đầu, Python được phát triển để chạy trên Hệ điều hành UNIX. Sau này, Python được phát triển để có thể chạy ở mọi điều hành như Windows, Linux, macOS và các hệ điều hành khác thuộc họ UNIX
+
+    2. Sự phổ biến của Python:
+
+    - Python được sử dụng rộng rãi ở mọi lĩnh vực như Web, phần mềm, lập trình nhúng,... //(Lập trình nhúng là đặc điểm riêng của Python)
+    - Đặc biệt, Python là ngôn ngữ được sử dụng phổ biến trong các lĩnh vực của Khoa học dữ liệu như AI, Deep Learning, Machine Learning, Data Analysis, Natural Language Processing, ...
+    - Python luôn có mặt trong bảng xếp hạng những ngôn ngữ lập trình phổ biến nhất
+
+II. TÍNH NĂNG VÀ TRIẾT LÝ CỦA PYTHON:
+
+    1. Tính năng của Python:
+
+    - Python là ngôn ngữ lập trình đa mẫu hình. Lập trình Hướng đối tượng (OOP) và Lập trình Cấu trúc đều được Python hỗ trợ
+    - Các tính năng của Python cũng hỗ trợ cho lập trình hàm và lập trình hướng khía cạnh
+    - Python sử dụng kiểu động và một dạng kết hợp giữa điểm tham chiếu và bộ dọn rác sẽ kiểm tra theo chu kỳ để quản lý bộ nhớ.
+
+    2 Triết lý của Python: 
+
+    Đẹp đẽ tốt hơn xấu xí
+    Minh bạch tốt hơn ngầm định
+    Đơn giản tốt hơn phức tạp
+    Phức tạp tốt hơn rắc rối
+    Tính dễ đọc rất quan trọng
+
+    // Có thể đọc bằng lệnh import this
+
+
+

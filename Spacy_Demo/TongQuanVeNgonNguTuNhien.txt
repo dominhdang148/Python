@@ -47,6 +47,7 @@ IV. Tại sao sử dụng Python trong xử lý Ngôn Ngữ tự nhiên?
     - Python cũng có nhiều thư viện hữu ích cho Machine Learning (Scikit-learn và Tensorflow), Data Science(NumPy)
     - Python có nhiều thư viện hỗ trợ cho Xử lý ngôn ngữ tự nhiên (SpaCy và NLTK)
 
+V. Sơ lược về 
 
                         
 
