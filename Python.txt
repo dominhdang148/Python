@@ -36,5 +36,79 @@ II. TÍNH NĂNG VÀ TRIẾT LÝ CỦA PYTHON:
 
     // Có thể đọc bài thơ này bằng lệnh import this
 
+III. Hướng đối tượng trong Python
+    
+    1. Tính Đóng gói:
+
+    - Tính đóng gói (Encapsulation) là tính chất theo hướng bảo mật trong lập trình hướng đối tượng, tính chất này sẽ là một quy tắc yêu cầu trạng thái bên trong của một đối tượng được bảo vệ và tránh truy cập được từ các đối tượng hay đoạn mã truy cập ở bên ngoài lớp đó. Việc đóng gọi nghĩa là tránh các đoạn mã bên ngoài không thể nhìn thấy và thay đổi trạng thái của đối tượng đó.
+    - Trong Python có 3 phạm vi truy cập thuộc tính của 1 đối tượng:
+        * Public --> Thuộc tính có thể được sử dụng ở bất cứ đâu trong chương trình.
+        * Protected ---> Thuộc tính chỉ được gọi ở lớp chứa nó và lớp kế thừa lớp đó, không thể gọi ở các lớp khác.
+        * Private --> Thuộc tính chỉ được gọi ở trong lớp chứa nó, không thể gọi ở các lớp khác
+    - Phạm vi truy cập của 1 thuộc tính được xác định bằng số dấu gạch chân ('_') đứng trước tên thuộc tính đó khi nó được định nghĩa 
+        * Public: Trước tên thuộc tính không có dấu gạch chân.
+        vd: grade = 0
+        * Protected: Trước tên thuộc tính có 1 dấu gạch chân
+        vd: _grade = 0
+        * Private: Trước tên thuộc tính có 2 dấu gạch chân
+        vd: __grade = 0
+    - Sử dụng __init__() như là 1 phương thức khởi tạo:
+        class Person:
+            name=""
+            age=0
+            def __init__(self,Ten, Tuoi):
+                self.name=Ten
+                self.age=Tuoi
+                
+    2. Tính kế thừa:
+
+    - Tính kế thừa cho phép 1 lớp có kể kế thừa các thuộc tính và phương thức từ các lớp khác đã được định nghĩa.
+    - Trong Python, để khai báo 1 lớp kế thừa 1 lớp khác, sử dụng cú pháp như sau:
+
+        class Human:
+            # Code của class Human
+        
+        Class Student(Human):
+            # Code của class Student
+    - Khi 1 lớp Con kế thừa 1 lớp Cha, Các đối tượng thuộc lớp con đèu mang các thuộc tính và phương thức có phạm vi public và protected của lớp cha đó.
+    - Python cho phép 1 lớp có thể kế thừa từ nhièu lớp khác (Đa kế thừa)Khi đó, lớp con sẽ kể thừa tất cả các đặc tính của các lớp cha  
+
+        class Horse:
+            # code của class Horse
+        
+        class Donkey:
+            # code của class Donkey
+        
+        class Hinny(Horse, Donkey):
+            # code của class Hinny
+    3. Tính đa hình
+    
+    - Tính đa hình cho phép 1 phương thức có thể sử dụng chung cho nhiều đối tượng thuộc lớp khác nhau cùng kế thừa 1 lớp cha
+    - Trong 1 lớp đang kế thừa từ 1 lớp cha. Python cho phép ghi đè tự do lên phương thức của lớp cha mà không cần khai báo trước.
+
+        class Animal:
+            def Moving(self)
+                print("An Animal is moving") 
+        
+        class Human(Animal):
+            def Moving(self):
+                print("A human is walking")
+    4. Tính trừu tượng
+
+    - Tính trừu tượng cho phép cho 1 lớp chỉu đưa ra các thành phần trong 1 đối tuọng mà không thực hiện gì với thành phần đó. Các thành phần này sẽ được định nghĩa ở trong lớp con kế thừa lớp đó
+    - Trong python, sử dụng từ khóa pass để khai báo 1 phương thức không thực thi điều gì.
+
+        class Person:
+            def Work(self):
+                pass
+        
+        class Teacher(Person):
+            def Work(self):
+                print("Teacher is teaching")
+        
+        class Student(Person):
+            def Work(self)
+                print("Student is studying")
 
 
+    
