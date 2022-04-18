@@ -9,7 +9,7 @@ import spacy
 nlp = spacy.load('en_core_web_sm')
 
 # khởi tạo đối tượng nlp
-doc = nlp("Huyen Trang xinh dep tuyet voi")
+doc = nlp("I go to school")
 
 #tìm ra thành phần đường dẫn hoạt động
 nlp.pipe_names
