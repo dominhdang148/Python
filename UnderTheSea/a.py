@@ -25,28 +25,26 @@ for para in document.paragraphs:
 sentence_List = uds.sent_tokenize(docu)
 
 # Tách từng câu thành các từ.
-word_List = []
-for s in sentence_List:
-    word_List.append(uds.word_tokenize(s))
-# fullsentence=uds.word_tokenize(docu, format='text')
-# # In kết quả thu được:
+word_List = uds.word_tokenize(docu)
+# Gắn nhãn POS cho các từ trong câu
+pos_tag_List=uds.pos_tag(docu)
 
-print("=========================================================================== KẾT QUẢ PHÂN TÍCH VĂN BẢN ===========================================================================")
+# In kết quả thu được:
+
+print("\t\tKÊT QUẢ PHÂN TÍCH VĂN BẢN")
 
 print("Các câu có trong đoạn văn bản là: \n")
 sentence_List = np.array(sentence_List)
 for sentence in sentence_List:
     print('\t'+sentence)
 
-print("\nCác từ trong từng câu là:\n")
+print("\nCác từ có trong đoạn văn bản là: \n")
+word_List = np.array(word_List)
+for word in word_List:
+    print(word)
 
-word_List = np.array(word_List, dtype='object')
-for sentence in word_List:
-    print('\t',end="")
-    for word in sentence:
-        print(word, end=" | ")
-    print('\n', end="")
-
-print("\n=================================================================================================================================================================================")
-
-input("Nhấn 1 phím bất kỳ để tiếp tục!!!")
+print("\nCác từ trong đoạn văn với nhãn POS tương ứng là: ")
+pos_tag_List= np.array(pos_tag_List)
+for word in pos_tag_List:
+    print(word[0]+'-->'+word[1])
+input("\nNhấn 1 phím bất kỳ để tiếp tục!!!")
