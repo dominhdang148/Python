@@ -27,7 +27,7 @@ sentence_List = uds.sent_tokenize(docu)
 # Tách từng câu thành các từ.
 word_List = uds.word_tokenize(docu)
 # Gắn nhãn POS cho các từ trong câu
-pos_tag_List=uds.pos_tag(docu)
+pos_tag_List = uds.pos_tag(docu)
 
 # In kết quả thu được:
 
@@ -41,10 +41,10 @@ for sentence in sentence_List:
 print("\nCác từ có trong đoạn văn bản là: \n")
 word_List = np.array(word_List)
 for word in word_List:
-    print(word)
+    print('\t'+word)
 
 print("\nCác từ trong đoạn văn với nhãn POS tương ứng là: ")
-pos_tag_List= np.array(pos_tag_List)
+pos_tag_List = np.array(pos_tag_List)
 for word in pos_tag_List:
-    print(word[0]+'-->'+word[1])
+    print('\t'+word[0]+'-->'+word[1])
 input("\nNhấn 1 phím bất kỳ để tiếp tục!!!")
