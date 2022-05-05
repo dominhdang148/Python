@@ -7,7 +7,9 @@ import underthesea as uds
 import numpy as np
 # Tạo một đối tượng là 1 file word:
 
+#  system('chcp 65001')  # Chỉnh console sang chế độ gõ tiếng Việt
 system('cls')
+
 doc = open("Demo.docx", "rb")
 
 # Tạo một đối tượng đọc file word trên:
@@ -28,7 +30,9 @@ sentence_List = uds.sent_tokenize(docu)
 word_List = uds.word_tokenize(docu)
 # Gắn nhãn POS cho các từ trong câu
 pos_tag_List = uds.pos_tag(docu)
-
+# Gắn nhãn chunking
+chunking_List = uds.chunk(docu)
+# Gắn hãn
 # In kết quả thu được:
 
 print("\t\tKÊT QUẢ PHÂN TÍCH VĂN BẢN")
@@ -47,4 +51,9 @@ print("\nCác từ trong đoạn văn với nhãn POS tương ứng là: ")
 pos_tag_List = np.array(pos_tag_List)
 for word in pos_tag_List:
     print('\t'+word[0]+'-->'+word[1])
+print("\nCác từ trong đoạn văn với nhãn chunking tương ứng là:")
+chunking_List = np.array(chunking_List)
+for word in chunking_List:
+    print('\t'+word[0]+'-->'+word[2])
+
 input("\nNhấn 1 phím bất kỳ để tiếp tục!!!")
