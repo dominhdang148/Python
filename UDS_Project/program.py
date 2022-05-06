@@ -1,7 +1,8 @@
-import menu as m
+from menu import MenuClass
 from os import system
-menu = 'abc'
-while menu != 0:
-    menu=m.ChonMenu()
-    m.XuLyMenu(menu)
+choose = 'abc'
+menu = MenuClass()
+while choose != 0:
+    choose=menu.ChonMenu()
+    menu.XuLyMenu(choose)
 system('cls')
