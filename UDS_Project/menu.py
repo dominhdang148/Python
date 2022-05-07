@@ -1,4 +1,6 @@
 from os import system
+import function as f
+
 class MenuClass:
     menuList = (
         'Thoát chương trình',
@@ -7,6 +9,8 @@ class MenuClass:
         'Phân loại văn bản',
         'Phân tích cảm xúc'
     )
+    text = ""
+
     def __init__(self):
         pass
 
@@ -16,8 +20,7 @@ class MenuClass:
             print(str(self.menuList.index(menu))+'. '+menu)
         print('=========================================================================================================')
 
-
-    def ChonMenu(self,SoMenu=len(menuList)-1):
+    def ChonMenu(self, SoMenu=len(menuList)-1):
         menu = ''
         while True:
             system('cls')
@@ -35,8 +38,7 @@ class MenuClass:
                 input("Nhấn phím Enter để tiếp tục!")
         return menu
 
-
-    def XuLyMenu(self,menu):
+    def XuLyMenu(self, menu):
         system('cls')
         # region Case 0
         if self.menuList[menu] == "Thoát chương trình":
@@ -45,6 +47,13 @@ class MenuClass:
         # region Case 1
         elif self.menuList[menu] == "Phân tích cú pháp":
             print("Phân tích cú pháp")
+            self.text = input("Xin hãy nhập 1 câu tiếng Việt: ")
+            result=f.TachTu(self.text)
+            print("========================================================")
+            print("Các từ có trong câu trên là: ")
+            for word in result:
+                print(word)
+            print("========================================================")
         # endregion
         # region Case 2
         elif self.menuList[menu] == "Gán nhãn thực thể có tên":
