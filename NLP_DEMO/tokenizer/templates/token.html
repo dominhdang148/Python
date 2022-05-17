@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Tokenizer</title>
+</head>
+
+<body>
+    <h1>Nhập 1 câu tiếng Việt</h1>
+    <form action="index/" method='POST'>
+        <input name="sentence">
+        <br><br>
+        <input type="submit" value="Phân tích">
+    </form>
+    <h1>Kết quả phân tích câu</h1>
+    <table border="1">
+        {% for x in y %}
+        <tr>
+            <td>{{ x }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
