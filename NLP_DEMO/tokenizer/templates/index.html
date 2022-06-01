@@ -16,6 +16,25 @@
         <br><br>
         <input type="submit" value="Phân tích">
     </form>
+
+    <div class="result_TKN">
+        <p>{{ t }}</p>
+        <h1>Kết quả phân tích câu</h1>
+        <table border="1">
+            {% for x in kq %}
+            <tr>
+                <td>{{ x.0 }}</td>
+                <td>{{ x.1 }}</td>
+                <td>{{ x.2 }}</td>
+                <td>{{ x.3 }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="classify">
+        <h1>Kết quả phân loại câu</h1>
+        <p> {{ kqcssf.0 }}</p>
+    </div>
 </body>
 
 </html>

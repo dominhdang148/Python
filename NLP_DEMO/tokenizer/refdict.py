@@ -23,17 +23,25 @@ pos_Dict = {
 
 chunk_Dict = {
     'B-AP': "Cụm tính từ",
-    'O': "",
+    'O': ".",
     'B-NP': "Cụm danh từ",
     'B-PP':"Cụm giới từ",
     "B-VP":"Cụm động từ",
 }
 
 name_Dict = {
+    'O':'',
     'B-PER':'Tên của 1 người',
     'I-PER':'Tên của 1 người',
     'B-LOC':'Tên của 1 địa điểm',
     'I-LOC':'Tên của 1 địa điểm',
     'B-ORG':"Tên của 1 tổ chức",
     'I-ORG':"Tên của 1 tổ chức"
-Ư
+}
+classify_Dict={
+    'chinh_tri_xa_hoi':'Chính trị - Xã hội',
+    'suc_khoe':"Sức khỏe",
+    'vi_tinh':"Công nghệ",
+    'doi_song':"Đời sống",
+    'the_thao':"Thể thao"
+}
