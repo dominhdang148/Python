@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <img src="{% static 'image/image.jpg' %}" alt="">
     <h1>Nhập 1 câu tiếng Việt</h1>
     <form action="add/" method='post'>
         {% csrf_token %}
@@ -21,15 +22,8 @@
     <div class="result_TKN">
         <p>{{ t }}</p>
         <h1>Kết quả phân tích câu</h1>
-        <table border="1">
-            {% for x in kq %}
-            <tr>
-                <td>{{ x.0 }}</td>
-                <td>{{ x.1 }}</td>
-                <td>{{ x.2 }}</td>
-                <td>{{ x.3 }}</td>
-            </tr>
-            {% endfor %}
+        <p>{{ kq }}</p>
+
         </table>
     </div>
     <div class="classify">

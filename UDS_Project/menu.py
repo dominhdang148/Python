@@ -75,7 +75,7 @@ class MenuClass:
             for word in result:
                 if(word[3]!='O'):
                     print(word[0] +' --> '+ r.name_Dict[word[3]])
-        # endregion ``
+        # endregion 
         # region Case 3
         elif self.menuList[menu] == "Tìm từ đồng nghĩa (Tiếng Anh)":
             print("Tìm từ đồng nghĩa (Tiếng Anh)")

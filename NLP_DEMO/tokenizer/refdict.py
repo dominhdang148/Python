@@ -22,21 +22,21 @@ pos_Dict = {
 }
 
 chunk_Dict = {
-    'B-AP': "Cụm tính từ",
-    'O': ".",
-    'B-NP': "Cụm danh từ",
-    'B-PP':"Cụm giới từ",
+    "B-AP": "Cụm tính từ",
+    "O": ".",
+    "B-NP": "Cụm danh từ",
+    "B-PP":"Cụm giới từ",
     "B-VP":"Cụm động từ",
 }
 
 name_Dict = {
-    'O':'',
-    'B-PER':'Tên của 1 người',
-    'I-PER':'Tên của 1 người',
-    'B-LOC':'Tên của 1 địa điểm',
-    'I-LOC':'Tên của 1 địa điểm',
-    'B-ORG':"Tên của 1 tổ chức",
-    'I-ORG':"Tên của 1 tổ chức"
+    "O":'',
+    "B-PER":"Tên người",
+    'I-PER':'Tên người',
+    'B-LOC':'Tên địa điểm',
+    'I-LOC':'Tên địa điểm',
+    'B-ORG':"Tên tổ chức",
+    'I-ORG':"Tên tổ chức"
 }
 classify_Dict={
     'chinh_tri_xa_hoi':'Chính trị - Xã hội',

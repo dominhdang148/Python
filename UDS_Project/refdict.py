@@ -36,4 +36,4 @@ name_Dict = {
     'I-LOC':'Tên của 1 địa điểm',
     'B-ORG':"Tên của 1 tổ chức",
     'I-ORG':"Tên của 1 tổ chức"
-Ư
+}
