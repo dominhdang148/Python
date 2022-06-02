@@ -1,42 +1,42 @@
 pos_Dict = {
-    "A": "Tính từ",
-    "FW": "Từ mượn",
-    "C": "Liên từ",
-    "CH": "Dấu câu",
-    "E": "Giới từ",
-    "I": "Thán từ",
-    "L": "Định từ",
-    "M": "Số từ",
-    "N": "Danh từ",
-    "Nc": "Danh từ chỉ loại",
-    "Np": "Danh từ riêng",
-    "Nu": "Danh từ đơn vị",
-    "Ny": "Danh từ viết tắt",
-    "P": "Đại từ",
-    "R": "Trạng từ",
-    "Z": "Yếu tố cấu tạo từ",
-    "T": "Trợ từ",
-    "V": "Động từ",
-    "Vy": "Động từ viết tắt",
-    "X": "Không phân loại"
+    "A": "Tính_từ",
+    "FW": "Từ_mượn",
+    "C": "Liên_từ",
+    "CH": "Dấu_câu",
+    "E": "Giới_từ",
+    "I": "Thán_từ",
+    "L": "Định_từ",
+    "M": "Số_từ",
+    "N": "Danh_từ",
+    "Nc": "Danh_từ_chỉ_loại",
+    "Np": "Danh_từ_riêng",
+    "Nu": "Danh_từ_đơn_vị",
+    "Ny": "Danh_từ_viết_tắt",
+    "P": "Đại_từ",
+    "R": "Trạng_từ",
+    "Z": "Yếu_tố_cấu_tạo_từ",
+    "T": "Trợ_từ",
+    "V": "Động_từ",
+    "Vy": "Động_từ_viết_tắt",
+    "X": "Không_phân_loại"
 }
 
 chunk_Dict = {
-    "B-AP": "Cụm tính từ",
+    "B-AP": "Cụm_tính_từ",
     "O": ".",
-    "B-NP": "Cụm danh từ",
-    "B-PP":"Cụm giới từ",
-    "B-VP":"Cụm động từ",
+    "B-NP": "Cụm_danh_từ",
+    "B-PP":"Cụm_giới_từ",
+    "B-VP":"Cụm_động_từ",
 }
 
 name_Dict = {
     "O":'',
-    "B-PER":"Tên người",
-    'I-PER':'Tên người',
-    'B-LOC':'Tên địa điểm',
-    'I-LOC':'Tên địa điểm',
-    'B-ORG':"Tên tổ chức",
-    'I-ORG':"Tên tổ chức"
+    "B-PER":"Tên_người",
+    'I-PER':'Tên_người',
+    'B-LOC':'Tên_địa_điểm',
+    'I-LOC':'Tên_địa_điểm',
+    'B-ORG':"Tên_tổ_chức",
+    'I-ORG':"Tên_tổ_chức"
 }
 classify_Dict={
     'chinh_tri_xa_hoi':'Chính trị - Xã hội',
