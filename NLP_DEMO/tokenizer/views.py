@@ -13,12 +13,8 @@ def index(request):
     kq = np.array(uds.ner(text))
     temp=kq
     for word in kq:
-        word[1]=r.pos_Dict[word[1]]
-        word[2]=r.chunk_Dict[word[2]]
-        word[3]=r.name_Dict[word[3]]
-    # for word in kq:
-    #     if word[3]=='O':
-    #         word[3]=""  # Loại bỏ nhãn từ không có kết quả
+        if word[3]=='O':
+            word[3]=""  # Loại bỏ nhãn từ không có kết quả
     kqcssf = np.array(uds.classify(text), ndmin=1)
     context = {
         't': text,
